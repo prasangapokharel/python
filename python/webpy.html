@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+	<title>PyScript Demo</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+
+		.input-group {
+			margin-bottom: 10px;
+		}
+
+		.result {
+			font-weight: bold;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="input-group">
+		<label for="total">Enter amount:</label>
+		<input type="number" id="total" />
+	</div>
+
+	<div class="input-group">
+		<label for="taxRate">Enter tax percentage:</label>
+		<input type="number" id="taxRate" />
+	</div>
+
+	<div class="input-group">
+		<label for="option">Choose an option:</label>
+		<select id="option">
+			<option value="printTax">Print Tax</option>
+			<option value="showValue">Show Value</option>
+		</select>
+	</div>
+
+	<button onclick="calculateTax()">Calculate Tax</button>
+
+	<div class="result" id="result"></div>
+
+	<py-script>
+		function calculateTax() {
+			var total = parseInt(document.getElementById("total").value);
+			var taxRate = parseInt(document.getElementById("taxRate").value);
+			var option = document.getElementById("option").value;
+
+			if (isNaN(total) || isNaN(taxRate)) {
+				alert("Please enter valid numbers.");
+				return;
+			}
+
+			var tax = (total / 100) * taxRate;
+
+			if (option === "printTax") {
+				console.log("The tax charged in profit Rs.", tax);
+			} else if (option === "showValue") {
+				document.getElementById("result").innerHTML = "The tax charged in profit Rs. " + tax;
+			}
+		}
+	</py-script>
+</body>
+</html>

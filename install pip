@@ -1,0 +1,15 @@
+Install pip: 
+Step1: Paste this in cmd  "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"
+Step2: Type python get-pip.py
+Step3: Copy path C:\Users\godsu\AppData\Local\Programs\Python\Python312\Scripts
+Step4: Open System Enviroment in Desktop
+Step5: CLick on "Enviroment Variables.." option.
+Step6: Now add path is "system variable"
+Step7: CLick on "path" and click edit
+Step8: CLick on "New"
+Step9: Paste "Script Path" like step3.
+Step10: Save and Done Error Fixed
+
+
+
+Sucessfully Pip module installed as script file.
